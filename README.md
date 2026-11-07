@@ -66,7 +66,7 @@ The model missed 2 malignant cases and wrongly flagged 1 benign case out of 114 
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/breast-cancer-prediction.git
+git clone https://github.com/<Kaushal93092>/breast-cancer-prediction.git
 cd breast-cancer-prediction
 
 # 2. (Optional) create a virtual environment
