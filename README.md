@@ -56,11 +56,11 @@ The model missed 2 malignant cases and wrongly flagged 1 benign case out of 114 
 
 | Model comparison | Confusion matrix |
 |---|---|
-| ![comparison](outputs/model_comparison.png) | ![confusion](outputs/confusion_matrix.png) |
+| ![comparison](model_comparison.png) | ![confusion](confusion_matrix.png) |
 
 | ROC curve | Top features |
 |---|---|
-| ![roc](outputs/roc_curve.png) | ![features](outputs/feature_importance.png) |
+| ![roc](roc_curve.png) | ![features](feature_importance.png) |
 
 ## 🚀 How to Run
 
@@ -76,7 +76,7 @@ python -m venv .venv
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Train and evaluate (creates outputs/ and models/)
+# 4. Train and evaluate (creates the charts, metrics.json and best_model.joblib)
 python train.py
 
 # 5. Predict on sample patients (or pass your own CSV)
@@ -95,13 +95,18 @@ Patient 2: Benign (confidence 99.9%)  | actual: Benign
 
 ```
 breast-cancer-prediction/
-├── train.py              # EDA, model comparison, tuning, evaluation, saving
-├── predict.py            # load saved model and predict on a CSV
-├── sample_patients.csv   # 5 example patients
+├── train.py                  # EDA, model comparison, tuning, evaluation, saving
+├── predict.py                # load saved model and predict on a CSV
+├── sample_patients.csv       # 5 example patients
+├── best_model.joblib         # trained pipeline
+├── metrics.json              # final test-set metrics
+├── class_distribution.png    # charts produced by train.py
+├── correlation_heatmap.png
+├── model_comparison.png
+├── confusion_matrix.png
+├── roc_curve.png
+├── feature_importance.png
 ├── requirements.txt
-├── models/
-│   └── best_model.joblib # trained pipeline
-├── outputs/              # charts + metrics.json
 ├── LICENSE
 └── README.md
 ```

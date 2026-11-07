@@ -30,9 +30,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
 SEED = 42
-OUT = Path("outputs")
-OUT.mkdir(exist_ok=True)
-Path("models").mkdir(exist_ok=True)
+OUT = Path(".")  # flat layout: everything is saved next to the scripts
 
 # ---------------------------------------------------------------- 1. Load data
 data = load_breast_cancer(as_frame=True)
@@ -150,6 +148,6 @@ plt.savefig(OUT / "feature_importance.png", dpi=150)
 plt.close()
 
 # ---------------------------------------------------------------- 8. Save model + a few demo samples
-joblib.dump({"model": best_model, "features": list(X.columns)}, "models/best_model.joblib")
+joblib.dump({"model": best_model, "features": list(X.columns)}, "best_model.joblib")
 X_test.head(5).assign(actual=y_test.head(5)).to_csv("sample_patients.csv", index=False)
-print("\nSaved: models/best_model.joblib, outputs/*.png, outputs/metrics.json, sample_patients.csv")
+print("\nSaved: best_model.joblib, *.png charts, metrics.json")

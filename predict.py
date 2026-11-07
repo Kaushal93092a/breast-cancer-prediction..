@@ -12,7 +12,7 @@ import pandas as pd
 
 LABELS = {0: "Malignant", 1: "Benign"}
 
-bundle = joblib.load("models/best_model.joblib")
+bundle = joblib.load("best_model.joblib")
 model, features = bundle["model"], bundle["features"]
 
 path = sys.argv[1] if len(sys.argv) > 1 else "sample_patients.csv"
